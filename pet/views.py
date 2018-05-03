@@ -8,11 +8,17 @@ from .forms import PetForm, OwnerForm
 def index(request):
     if request.method == 'POST':
         form_pet = PetForm(request.POST)
+        print(request.POST, type(request.POST), request.POST['owner'], type(request.POST['owner']))
         form_owner = OwnerForm(request.POST)
         if form_pet.is_valid():
-            pet = Pet(name = form_pet.name, race = form_pet.race, age = form_pet.age, owner = form_pet.owner)
+            pet = Pet(
+                name=request.POST['name'][2:-2],
+                race=request.POST['race'][2:-2],
+                age=request.POST['age'][2:-2],
+                owner=request.POST['owner'][2:-2],
+            )
             pet.save()
-            return redirect('/index')
+            return redirect('/pet')
         elif form_owner.is_valid():
             pass
     else:
