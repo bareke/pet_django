@@ -10,4 +10,4 @@ class PetForm(forms.Form):
 
 
 class OwnerForm(forms.Form):
-    owner = forms.CharField(label = 'owner', max_length = 25)
+    owner_query = forms.CharField(label = 'owner', max_length = 25)
