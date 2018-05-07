@@ -29,15 +29,15 @@
 						<input name="name" id="name" type="text">
 					</div>
 					<div class="form-control narrow">
-						<label for="name">Race</label>
-						<input name="race" id="race" type="text">
+						<label for="type_pet">Type pet</label>
+						<input name="type_pet" id="type_pet" type="text">
 					</div>
 					<div class="form-control narrow">
-						<label for="name">Age</label>
+						<label for="age">Age</label>
 						<input name="age" id="age" type="text">
 					</div>
 					<div class="form-control narrow">
-						<label for="name">Owner</label>
+						<label for="owner">Owner</label>
 						<input name="owner" id="owner" type="text">
 					</div>
 					<ul class="actions">
@@ -62,8 +62,8 @@
 					{% csrf_token %}
 
 					<div class="form-control">
-						<label for="name">Owner</label>
-						<input name="owner_query" id="owner_query" type="text">
+						<label for="owner">Owner</label>
+						<input name="owner" id="owner" type="text">
 					</div>
 					<ul class="actions">
 						<li><input value="Query" type="submit"></li>
