@@ -6,7 +6,6 @@ from .forms import PetForm, OwnerForm
 # Create your views here.
 
 def index(request):
-    template_name = 'index.html'
     if request.method == 'POST':
         form_pet = PetForm(request.POST)
         form_owner = OwnerForm(request.POST)
@@ -16,19 +15,19 @@ def index(request):
                 name = form_pet['name'].value(),
                 type_pet = form_pet['type_pet'].value(),
                 age = form_pet['age'].value(),
-                owner = form_pet['owner'].value(),
+                owner = form_pet['owner'].value()
             )
             pet.save()
-            return redirect('/pet')
+            return redirect('index')
 
         elif form_owner.is_valid():
             owner = form_owner['owner'].value()
-            #TODO pasar el valor de owner a la url /query
+            return redirect('query_pet', owner)
     else:
         form_pet = PetForm()
         form_owner = OwnerForm()
     context = {'form_pet': form_pet, 'form_owner': form_owner}
-    return render(request, template_name = template_name, context = context)
+    return render(request, 'index.html', context = context)
 
 def query_pet(request, owner):
     pets = get_list_or_404(Pet, owner = owner)

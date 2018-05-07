@@ -8,6 +8,5 @@ class PetForm(forms.Form):
     age = forms.IntegerField(min_value = 1)
     owner = forms.CharField(label = 'owner', max_length = 25)
 
-
 class OwnerForm(forms.Form):
     owner = forms.CharField(label = 'owner', max_length = 25)
