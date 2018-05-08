@@ -1,10 +1,9 @@
 from django.shortcuts import render
-from django.views.generic import TemplateView
-from django.views.generic import CreateView
+from django.views.generic import CreateView, FormView, TemplateView
 from .models import FoodSupply, VolunteerService
 
 
-class initialDonationView(TemplateView):
+class initialDonationView(FormView):
     template_name = 'landing_donation.html'
 
 class foodCreateView(CreateView):
