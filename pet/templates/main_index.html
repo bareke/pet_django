@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block title %}
+  Pet Home
+{% endblock %}
+
+{% block content %}
+<p>donaciones:  <a href="{% url 'index_donation' %}">donaciones</a></p>
+<p>mascotas:  <a href="{% url 'index_pet' %}">mascotas</a></p>
+{% endblock %}

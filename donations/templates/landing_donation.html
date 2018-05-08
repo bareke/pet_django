@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block title %}
+  donations
+{% endblock %}
+
+{% block content %}
+  <p>lets donate</p>
+  <p> <a href="{% url 'food_donation' %}">food</a> </p>
+  <p> <a href="{% url 'volunteers_donation' %}">volunteer</a> </p>
+{% endblock %}

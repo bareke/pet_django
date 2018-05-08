@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block title %}
+  donations
+{% endblock %}
+
+{% block content %}
+  <form class="mything" action="" method="post">
+    {% csrf_token %}
+    {{ form }}
+    <input type="submit" name="" value="Submit">
+
+  </form>
+  <p>lets donate</p>
+  <p> <a href="{% url 'food_donation' %}">food</a> </p>
+  <p> <a href="{% url 'volunteers_donation' %}">volunteer</a> </p>
+{% endblock %}

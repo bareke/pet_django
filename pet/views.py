@@ -18,7 +18,7 @@ def index(request):
                 owner = form_pet['owner'].value()
             )
             pet.save()
-            return redirect('index')
+            return redirect('index_pet')
 
         elif form_owner.is_valid():
             owner = form_owner['owner'].value()
