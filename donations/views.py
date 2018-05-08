@@ -3,6 +3,7 @@ from django.views.generic import TemplateView
 from django.views.generic import CreateView
 from .models import FoodSupply, VolunteerService
 
+
 class initialDonationView(TemplateView):
     template_name = 'landing_donation.html'
 
