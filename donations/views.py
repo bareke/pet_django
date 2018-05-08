@@ -5,6 +5,7 @@ from .models import FoodSupply, VolunteerService
 
 class initialDonationView(FormView):
     template_name = 'landing_donation.html'
+    success_url = ''
 
 class foodCreateView(CreateView):
     model = FoodSupply
